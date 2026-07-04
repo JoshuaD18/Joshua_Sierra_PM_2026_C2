@@ -1,0 +1,10 @@
+
+Movimiento
+Mover disco 1 de A a C
+Mover disco 2 de A a B
+Mover disco 1 de C a B
+Mover disco 3 de A a C
+Mover disco 1 de B a A
+Mover disco 2 de B a C
+Mover disco 1 de A a C
+Total de movimientos; 7

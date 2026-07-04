@@ -1,0 +1,62 @@
+[
+  {
+    "nombre": "Juan Luis",
+    "apellido": "Guerra",
+    "promedio": 9.8,
+    "materia": "Programacion para Mecatronicos"
+  },
+  {
+    "nombre": "Milly",
+    "apellido": "Quezada",
+    "promedio": 8.5,
+    "materia": "Calculo Integral"
+  },
+  {
+    "nombre": "Raymond",
+    "apellido": "Pozo",
+    "promedio": 9.2,
+    "materia": "Fisica Mecanica"
+  },
+  {
+    "nombre": "Miguel",
+    "apellido": "Cespedes",
+    "promedio": 7.9,
+    "materia": "Algebra Lineal"
+  },
+  {
+    "nombre": "Fefita",
+    "apellido": "La Grande",
+    "promedio": 10.0,
+    "materia": "Circuitos Electricos"
+  },
+  {
+    "nombre": "Romeo",
+    "apellido": "Santos",
+    "promedio": 8.9,
+    "materia": "Programacion para Mecatronicos"
+  },
+  {
+    "nombre": "Eddy",
+    "apellido": "Herrera",
+    "promedio": 9.1,
+    "materia": "Fisica Mecanica"
+  },
+  {
+    "nombre": "Jochy",
+    "apellido": "Santos",
+    "promedio": 8.2,
+    "materia": "Calculo Integral"
+  },
+  {
+    "nombre": "Mozart",
+    "apellido": "La Para",
+    "promedio": 7.5,
+    "materia": "Algebra Lineal"
+  },
+  {
+    "nombre": "Techy",
+    "apellido": "Fatule",
+    "promedio": 9.4,
+    "materia": "Circuitos Electricos"
+  }
+]

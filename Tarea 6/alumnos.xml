@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lista_alumnos>
+    <alumno>
+        <nombre>Juan Luis</nombre>
+        <apellido>Guerra</apellido>
+        <promedio>9.8</promedio>
+        <materia>Programacion para Mecatronicos</materia>
+    </alumno>
+    <alumno>
+        <nombre>Milly</nombre>
+        <apellido>Quezada</apellido>
+        <promedio>8.5</promedio>
+        <materia>Calculo Integral</materia>
+    </alumno>
+    <alumno>
+        <nombre>Raymond</nombre>
+        <apellido>Pozo</apellido>
+        <promedio>9.2</promedio>
+        <materia>Fisica Mecanica</materia>
+    </alumno>
+    <alumno>
+        <nombre>Miguel</nombre>
+        <apellido>Cespedes</apellido>
+        <promedio>7.9</promedio>
+        <materia>Algebra Lineal</materia>
+    </alumno>
+    <alumno>
+        <nombre>Fefita</nombre>
+        <apellido>La Grande</apellido>
+        <promedio>10.0</promedio>
+        <materia>Circuitos Electricos</materia>
+    </alumno>
+    <alumno>
+        <nombre>Romeo</nombre>
+        <apellido>Santos</apellido>
+        <promedio>8.9</promedio>
+        <materia>Programacion para Mecatronicos</materia>
+    </alumno>
+    <alumno>
+        <nombre>Eddy</nombre>
+        <apellido>Herrera</apellido>
+        <promedio>9.1</promedio>
+        <materia>Fisica Mecanica</materia>
+    </alumno>
+    <alumno>
+        <nombre>Jochy</nombre>
+        <apellido>Santos</apellido>
+        <promedio>8.2</promedio>
+        <materia>Calculo Integral</materia>
+    </alumno>
+    <alumno>
+        <nombre>Mozart</nombre>
+        <apellido>La Para</apellido>
+        <promedio>7.5</promedio>
+        <materia>Algebra Lineal</materia>
+    </alumno>
+    <alumno>
+        <nombre>Techy</nombre>
+        <apellido>Fatule</apellido>
+        <promedio>9.4</promedio>
+        <materia>Circuitos Electricos</materia>
+    </alumno>
+</lista_alumnos>
