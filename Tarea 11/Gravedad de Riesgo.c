@@ -5,31 +5,27 @@
 #define MAX_TEXTO 100
 #define MAX_FILENAME 150
 
-// Estructura para el Método Mosler
 typedef struct {
     int id;
     char bien[MAX_TEXTO];
     char riesgo[MAX_TEXTO];
     char dano[MAX_TEXTO];
 
-    // Criterios Fase 2
-    int F; // Función
-    int S; // Sustitución
-    int P; // Profundidad
-    int E; // Extensión
-    int A; // Agresión
-    int B; // Vulnerabilidad
+    int F;
+    int S;
+    int P;
+    int E;
+    int A;
+    int B;
 
-    // Fases 3 y 4
-    int I;  // Importancia (F * S)
-    int D;  // Daños (P * E)
-    int C;  // Carácter (I + D)
-    int Pb; // Probabilidad (A * B)
-    int ER; // Cuantificación del riesgo (C * Pb)
+    int I;
+    int D;
+    int C;
+    int Pb;
+    int ER;
     char clasificacion[MAX_TEXTO];
 } RiesgoMosler;
 
-// Prototipos
 void calcularRiesgo(RiesgoMosler *r);
 void pedirTexto(const char *mensaje, char *buffer, int maxLen);
 int pedirValor(const char *mensaje, int min, int max);
@@ -46,9 +42,6 @@ void guardarEnXML(const RiesgoMosler *lista, int cantidad, const char *nombreArc
 
 void liberarMemoria(RiesgoMosler **lista, int *cantidad);
 
-// ==========================================
-// PROGRAMA PRINCIPAL
-// ==========================================
 int main() {
     RiesgoMosler *listaRiesgos = NULL;
     int cantidadRiesgos = 0;
@@ -131,10 +124,6 @@ int main() {
     return 0;
 }
 
-// ==========================================
-// FUNCIONES AUXILIARES Y CÁLCULOS
-// ==========================================
-
 void pedirTexto(const char *mensaje, char *buffer, int maxLen) {
     printf("%s", mensaje);
     fgets(buffer, maxLen, stdin);
@@ -176,10 +165,6 @@ void calcularRiesgo(RiesgoMosler *r) {
         strcpy(r->clasificacion, "Critico");
     }
 }
-
-// ==========================================
-// OPERACIONES CRUD CON MEMORIA DINÁMICA
-// ==========================================
 
 void crearRiesgo(RiesgoMosler **lista, int *cantidad) {
     RiesgoMosler *temp = realloc(*lista, (*cantidad + 1) * sizeof(RiesgoMosler));
@@ -291,11 +276,6 @@ void liberarMemoria(RiesgoMosler **lista, int *cantidad) {
     *cantidad = 0;
 }
 
-// ==========================================
-// PERSISTENCIA (ARCHIVOS BINARIOS / JSON / XML)
-// ==========================================
-
-// Guardado directo en archivo binario estructurado (.dat)
 void guardarEnBinario(const RiesgoMosler *lista, int cantidad, const char *nombreArchivo) {
     FILE *archivo = fopen(nombreArchivo, "wb");
     if (archivo == NULL) {
@@ -303,9 +283,7 @@ void guardarEnBinario(const RiesgoMosler *lista, int cantidad, const char *nombr
         return;
     }
 
-    // Guarda primero la cantidad de registros
     fwrite(&cantidad, sizeof(int), 1, archivo);
-    // Guarda el bloque completo de estructuras en memoria
     if (cantidad > 0) {
         fwrite(lista, sizeof(RiesgoMosler), cantidad, archivo);
     }
@@ -314,7 +292,6 @@ void guardarEnBinario(const RiesgoMosler *lista, int cantidad, const char *nombr
     printf("\n[SUCCESS] %d registros guardados exitosamente en archivo binario '%s'\n", cantidad, nombreArchivo);
 }
 
-// Carga directa en memoria dinámica desde archivo binario (.dat)
 void cargarDesdeBinario(RiesgoMosler **lista, int *cantidad, const char *nombreArchivo) {
     FILE *archivo = fopen(nombreArchivo, "rb");
     if (archivo == NULL) {
@@ -342,7 +319,6 @@ void cargarDesdeBinario(RiesgoMosler **lista, int *cantidad, const char *nombreA
         fread(*lista, sizeof(RiesgoMosler), numRegistros, archivo);
         *cantidad = numRegistros;
 
-        // Recalcular por seguridad
         for (int i = 0; i < *cantidad; i++) {
             calcularRiesgo(&((*lista)[i]));
         }
@@ -352,7 +328,6 @@ void cargarDesdeBinario(RiesgoMosler **lista, int *cantidad, const char *nombreA
     printf("\n[SUCCESS] %d registros cargados desde el binario '%s' en memoria dinamica.\n", *cantidad, nombreArchivo);
 }
 
-// Exportación a JSON
 void guardarEnJSON(const RiesgoMosler *lista, int cantidad, const char *nombreArchivo) {
     FILE *archivo = fopen(nombreArchivo, "w");
     if (archivo == NULL) {
@@ -380,7 +355,6 @@ void guardarEnJSON(const RiesgoMosler *lista, int cantidad, const char *nombreAr
     printf("\n[SUCCESS] Datos exportados correctamente a JSON: '%s'\n", nombreArchivo);
 }
 
-// Exportación a XML
 void guardarEnXML(const RiesgoMosler *lista, int cantidad, const char *nombreArchivo) {
     FILE *archivo = fopen(nombreArchivo, "w");
     if (archivo == NULL) {
